@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userForm{
+            display: flex;
+            flex-direction: column; 
+            margin: 0 auto;  
+        }
+        div{
+            margin-bottom: 10px; 
+        }
+        span{
+            display: inline-block; 
+            text-align: right;
+            position: flex;
+            width: 300px;
+        }
+        .input{
+            position: flex;
+            width: 100%;
+            height: 30px;
+            right: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body> 
+    <form id="userForm">
+        <div>
+            <span>이름 : </span>
+            <input type="text" name="user_name" id="user_name" placeholder="사용자 이름" autofocus>
+        </div>
+        <div>
+            <span>나이 : </span>
+            <input type="number" name="user_id" id="user_id" value="20" min="0" max="150">
+        </div>
+        <div> 
+            <span>성별 : </span>
+            남자 <input type="radio" name="user_gender" id="user_gender" value = "man">
+            여자 <input type="radio" name="user_gender" id="user_gender" value = "woman"> 
+        </div>
+        <div>
+            <span>비밀번호 : </span>
+            <input type="password" name="user_pw" id="user_pw" placeholder="비밀번호 입력" minlength="4" maxlength="50">
+        </div>
+        <div>
+            <span>비밀번호를 재입력 : </span>
+            <input type="password" name="user_pw_confirm" id="user_pw_confirm" placeholder="비밀번호를 재입력">
+        </div>
+        <button type="submit">회원가입</button>
+        <button type="reset">초기화</button>
+    </form> 
+
+    <hr>
+    <br><br><br><br><br><br><br><br><br><br> 
+    <form action="#" method="get" id="testForm">
+        <p> 좋아하는 음료를 모두 골라주세요 : </p>
+        <input type="checkbox" name="menu" value="coffee">커피
+        <input type="checkbox" name="menu" value="tea">차
+        <input type="checkbox" name="menu" value="juice">주스
+        <input type="checkbox" name="menu" value="water">물
+        <input type="checkbox" name="menu" value="milk">우유
+        <!-- 체크박스로 선택 시 중복이 가능함. --> 
+
+        <select name="" id="">
+            <option value="A">A형</option> 
+            <option value="B">B형</option>
+            <option value="O">O형</option>
+            <option value="AB">AB형</option>
+        </select>
+
+        <h3>게시글 입력</h3>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+
+        <h3>그 외의 항목</h3>
+        <input type="color" name="color" id="color">
+        <br>
+        <input type="date" name="date" id="date">
+        <br>
+        <input type="file" name="file" id="file">
+    </form>   
+
+    <form action="" >
+        <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="사용자 이름"
+            autofocus
+    </form>
+</body>
+
+<script> 
+    document.getElementById('userForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var user_pw = document.getElementById('user_pw').value;
+        var user_pw_confirm = document.getElementById('user_pw_confirm').value;
+
+        if(user_pw !== user_pw_confirm){
+            alert('비밀번호가 일치하지 않습니다.');
+            return;
+        }
+
+        var user_name = document.getElementById('user_name').value;
+        var user_id = document.getElementById('user_id').value;
+        var gender = document.getElementById('user_gender').value;
+
+        if(user_name === ''){
+            alert('이름을 입력해주세요.');
+            return;
+        }
+        else if(user_id === ''){
+            alert('나이를 입력해주세요.');
+            return;
+        }
+        else if(user_pw === ''){
+            alert('비밀번호를 입력해주세요.');
+            return;
+        }
+        else if(user_pw_confirm === ''){
+            alert('비밀번호를 재입력해주세요.');
+            return;
+        }
+        else if(gender === ''){
+            alert('성별을 선택해주세요.');
+            return;
+        }
+        else {  
+            const response = confirm('회원가입을 완료하시겠습니까?');
+            catth(response){
+                console.log('이름 : ' + user_name);
+                console.log('나이 : ' + user_id);
+                console.log('비밀번호 : ' + user_pw);
+                console.log("성별 : ", gender); 
+                alert('회원가입이 완료되었습니다.');
+                this.submit(); 
+            }
+            try{
+                alert('회원가입에 실패했습니다.');
+             } 
+        }
+    };
+    
+</script>
+
+</html>

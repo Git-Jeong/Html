@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userForm {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        span {
+            display: inline-block;
+            text-align: right;
+            width: 150px;
+        }
+        .input {
+            width: 100%;
+            height: 30px; 
+            border-radius: 5px;
+        }
+        table {
+            width: 500px !important;
+            border-collapse: collapse; 
+        }
+        .table_head {
+            background-color: gray;
+            height: 50px; 
+        }
+        .td_data_title {
+            text-align: center;
+            height: 35px;
+            border: 1px solid black; 
+            background-color: whitesmoke;
+        }
+        .td_data { 
+            padding-left: 5px;
+            border: 1px solid black; 
+            height: 35px;
+            background-color: whitesmoke;
+        }
+        .td_data_content {  
+            width: 500px; 
+        } 
+    </style>
+</head>
+<body>
+    <form id="userForm">
+        <table> 
+            <tr>
+                <th class="table_head" colspan="2">step 1 : 아이디/비번 입력</th>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                   아이디
+                </td>
+                <td class="td_data">
+                    <input type="text" name="user_id" id="user_id" placeholder="userId" autofocus>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                   비밀번호
+                </td>
+                <td class="td_data">
+                    <input type="password" name="user_pw" id="user_pw" placeholder="비밀번호 입력" minlength="4" maxlength="50">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                   비밀번호 재입력
+                </td>
+                <td class="td_data">
+                    <input type="password" name="user_pw_confirm" id="user_pw_confirm" placeholder="비밀번호를 재입력">
+                </td>
+            </tr>
+            <tr>
+                <th class="table_head" colspan="2">step 2 : 개인정보</th>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                    성별
+                </td> 
+                <td class="td_data"> 
+                    남자 <input type="radio" name="user_gender" value="man">
+                    여자 <input type="radio" name="user_gender" value="woman">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                    혈액형
+                </td> 
+                <td class="td_data"> 
+                    <select name="bloodType" id="bloodType">
+                        <option value="A">A형</option>
+                        <option value="B">B형</option>
+                        <option value="O">O형</option>
+                        <option value="AB">AB형</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                    생일
+                </td> 
+                <td class="td_data"> 
+                    <input type="date" name="birthDay" id="birthDay">
+                </td>
+            </tr>
+            <tr>
+                <th class="table_head" colspan="2">step 3 : 선호도</th>
+            </tr>
+            <tr>
+                <td class="td_data_title ">
+                    취미 
+                </td>
+                <td class="td_data">
+                    <input type="checkbox" name="hobby" value="soccer">축구
+                    <input type="checkbox" name="hobby" value="baseball">야구 
+                    <input type="checkbox" name="hobby" value="basketball">농구
+                </td>
+            </tr>
+            <tr> 
+                <td class="td_data_title ">
+                    좋아하는 색깔 
+                </td>
+                <td class="td_data">
+                    <input type="color" name="color" id="color">
+                </td>
+            </tr>
+            <tr>
+                <th class="table_head" colspan="2">step 4 : 하고싶은 말</th>
+            </tr>
+            <tr>
+                <td class="td_data"colspan="2">
+                    <textarea class="td_data_content" name="content" id="content"  cols="100%" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_data_title " colspan="2"> 
+                    <button type="submit">제출</button>
+                    <button type="reset">초기화</button>
+                </td>
+            </tr>
+        </table>  
+         
+    </form>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var user_id = document.getElementById('user_id').value; 
+            var user_pw = document.getElementById('user_pw').value; 
+            var user_pw_confirm = document.getElementById('user_pw_confirm').value; 
+
+            var gender = document.querySelector('input[name="user_gender"]:checked'); 
+            var bloodType = document.getElementById('bloodType').value; 
+            var birthDay = document.getElementById('birthDay').value; 
+ 
+            var hobby = document.getElementsByName('hobby');  
+            var color = document.getElementById('color').value; 
+            var content = document.getElementById('content').value;  
+            
+            if (user_id === '') {
+                alert('아이디를 입력해주세요.');
+                return;
+            }
+            else if (user_pw === '') {
+                alert('비밀번호를 입력해주세요.');
+                return;
+            }
+            else if (user_pw_confirm === '') {
+                alert('비밀번호를 재입력해주세요.');
+                return;
+            } 
+            else if (!gender) {
+                alert('성별을 선택해주세요.');
+                return;
+            } 
+            else if(bloodType === ''){
+                alert('혈액형을 선택해주세요.');
+                return;
+            }
+            else if(birthDay === ''){
+                alert('생일을 선택해주세요.');
+                return;
+            }
+            else if(color === ''){
+                alert('색깔을 선택해주세요.');
+                return;
+            }
+            else if(content === ''){
+                alert('하고싶은 말을 입력해주세요.');
+                return;
+            }
+            else if(user_pw !== user_pw_confirm){
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+            else {
+                const response = confirm('회원가입을 완료하시겠습니까?');
+                if (response) {
+                    console.log('아이디 : ' + user_id);  
+                    console.log('비밀번호 : ' + user_pw); 
+
+                    console.log("성별 : ", gender.value);
+                    console.log('혈액형 : ' + bloodType);
+                    console.log('생일 : ' + birthDay); 
+ 
+                    for (var i = 0; i < hobby.length; i++) {
+                        if (hobby[i].checked) {
+                            console.log('취미 : ' + hobby[i].value);
+                        }
+                    }  
+                    console.log('색깔 : ' + color);
+
+                    console.log('하고싶은 말 : ' + content); 
+                }
+                else {
+                    alert('회원가입이 취소되었습니다.');
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
