@@ -1,0 +1,13 @@
+.span1{
+    font-size: 10px; 
+    /* px은 픽셀 단위로 조절하는 것 1px = 1px*/
+}
+
+.span2{
+    font-size: 2em;  
+    /* em은 상대적인 단위로 조절하는 것 1em = 16px */
+}
+
+.span3{
+    font-size: 3rem;  
+}

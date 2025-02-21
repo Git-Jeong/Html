@@ -1,0 +1,57 @@
+body{
+    padding : 0;
+    margin : 0;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body span{
+    color : red; 
+}
+
+ul>li{
+    color : blue; 
+}
+
+li+li{
+    /* +의 경우 근접형제 선택자 */
+    /* lt를 기준으로, 바로 뒤에 있는 li의 색상만 바꾸는 것 */
+    color: yellow;
+}
+
+li~li{
+    /* ~의 경우 모든 형제 선택자 */
+    /* li를 기준으로, li들의 색상을 변경 */
+    color : green;
+}
+
+li:last-child{
+    /* first-child의 경우는 li를 기준으로 첫 번째 요소에 작용*/
+    /* last-child의 경우는 li를 기준으로 마지막 요소에 작용 */
+    color : purple;
+}
+
+li:nth-child(2) + li{
+    /* nth-child의 경우는 li를 기준으로 n번째 요소에 작용 */
+    color : skyblue;
+}
+
+/* 영시도 순위 */
+/* 
+점수가 높을수곩 높은 순위
+
+전체선택자(0점) : *
+태그(이름) 선택자(1점) " 태그이름
+클래스 선택자(10점) 사용기호 : .
+아이디 선택자(100저) 사용기호 : #
+인라인방식(1000점) 사용기호 : 태그안에 sytle속성
+!important(10000점) 사용기호 : !important
+
+
+1. body span
+2. ul>li
+3. li+li
+
+
+*/

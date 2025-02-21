@@ -1,0 +1,36 @@
+/*  */
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f4f4f4; 
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;  
+}
+
+.text-center {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;   
+    display: flex; 
+    align-content: flex-start; 
+    flex-wrap: wrap;  
+}
+
+
+.red-text{
+    color: red; 
+}
+
+.orange-text{
+    color: orange;
+}
+
+.span-text-color-1{
+    color: cyan;
+}
