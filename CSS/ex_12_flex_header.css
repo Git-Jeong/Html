@@ -1,0 +1,60 @@
+body {
+    padding: 0;
+    margin: 0; 
+}
+
+:root {
+    /* 기본 헤더정보 */
+    --header-bg-color : whitesmoke;
+    --header-height: 100px;
+
+    /* 기본 글자색 */
+    --header-text-color : black;
+
+    /* 호버시 변하는 색상 */
+    --header-text-hover-color : rgb(255, 255, 255); 
+    --header-hover-bg-color : black;
+}
+
+a {
+    text-decoration-line: none;
+    color: var(--header-text-color);
+}
+
+a:hover {
+    color: var(--header-text-hover-color);
+    background-color: var(--header-hover-bg-color);
+}
+
+.header {
+    height: var(--header-height);
+    width: 100vw;
+    background-color: var(--header-bg-color);
+    position: fixed;
+    display: flex;
+    justify-content: center;  /* 중앙 정렬 */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 5vw; 
+}
+
+.header-logo, .header-menu, .header-user-menu {
+    flex-basis: 33%;  
+    font-size: 25px; 
+} 
+
+.header-logo, .header-menu{
+    font-weight: 900;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-user-menu {
+    display: flex;
+    gap: 20px;    
+    justify-content: flex-end;
+}
