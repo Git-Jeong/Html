@@ -1,0 +1,51 @@
+ 
+:root{
+    /* 신호등 박스 */
+    /* 신호등 박스의 넓이 */
+    --blinker-box-width : 120px;
+    /* 신호등 박스의 높이이 */
+    --blinker-box-height : 360px; 
+    /* 신호등 박스의 radius */
+    --blinker-box-radius : 20px; 
+
+
+    /* 신호등 LED */
+    /* 신호등 LED의의 넓이 */
+    --blinker-circle-width: 100px;
+    /* 신호등 LED의 높이 */
+    --blinker-circle-hight: 100px; 
+    /* 신호등 등그라미 LED의 margin-top */
+    --blinker-circle-margin : 15px;
+    /* 신호등 동그라미 LED의 radius */
+    --blinker-circle-border-radius: 50%;
+} 
+
+.blinker-box{ 
+    position: fixed;
+    width: var(--blinker-box-width);
+    height: var(--blinker-box-height);   
+    border-radius: var(--blinker-box-radius);   
+    background-color: black; 
+}
+
+.blinker-red, .blinker-yellow, .blinker-green{
+    width: var(--blinker-circle-width);
+    height: var(--blinker-circle-hight);
+    border-radius: var(--blinker-circle-border-radius);  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--blinker-circle-margin);  
+}
+
+
+.blinker-red{ 
+    background-color: red;   
+}
+
+.blinker-yellow{  
+    background-color: yellow;  
+}
+
+.blinker-green{  
+    background-color: green;  
+}

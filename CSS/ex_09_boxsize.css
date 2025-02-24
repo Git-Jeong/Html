@@ -26,7 +26,7 @@ div{
         */
     box-sizing: border-box;
 }
-
+    
 /* 
 만약 내가 padding이나 border값을 주더라도 전체 조형의 크기가 영양을 받지 않았으면 좋겠댜ㅏ??
 box-sizing: border-box;
