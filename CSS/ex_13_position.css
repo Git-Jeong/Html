@@ -3,8 +3,13 @@ body{
     margin: 0;
     width: 100vw;
     height: 100vh;
+     -ms-overflow-style: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+  }
+  
 div{
     font-size: 1.5em;
     font-weight: bold;
