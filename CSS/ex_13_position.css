@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+div{
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+.parents{ 
+    background: rgb(166, 164, 164);
+    position: relative;
+}
+
+.div-sticky{ 
+    position: sticky;
+    background: rgb(154, 151, 174);
+    top: 0px;
+    text-align: center;
+    color : wheat;
+    z-index:1000;
+}
+
+.div-static{   
+    height: 100px;
+    position: static; 
+    background-color: rgb(190, 207, 94);
+}
+
+.div-relative{
+    /* 상대적인 위치 */
+    background-color: orange;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.div-absolute{
+    position: absolute; 
+    background-color: skyblue;
+}
