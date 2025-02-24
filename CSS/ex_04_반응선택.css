@@ -1,0 +1,11 @@
+.main-title{
+    color: red;
+}
+
+.main-title:hover{
+    color: blue; 
+}    
+
+.main-title:active{
+    color: rgb(201, 209, 158); 
+}  

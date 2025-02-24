@@ -1,0 +1,23 @@
+.question {
+    display: block;
+}
+
+.answer {
+    display: none;
+}
+
+.question:hover + .answer {
+    display: inline;
+}
+
+
+/* 
+만약 question이 하나라도 호버일 경우 모든 answer가 보이게 하고 싶다면
+
+.question:hover ~ .answer,
+.question:hover + .answer,
+:has(.question:hover) .answer {
+    display: inline;
+}
+
+*/

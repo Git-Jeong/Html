@@ -1,0 +1,22 @@
+/* 그룹 지정자 */
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh; 
+}
+
+p, span {
+    width: 200px;
+    height: 200px;
+}
+
+p {
+    background-color: pink; 
+}
+
+span {
+    background-color: #0f0;
+    display: block;
+    margin-top: 16px;
+}

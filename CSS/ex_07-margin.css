@@ -1,0 +1,34 @@
+body{
+    padding: 0;
+    margin: 0; 
+}
+
+:root{
+    --div-box-width: 100px;
+    --div-box-height: 100px;
+}
+
+div{
+    width: var(--div-box-width);
+    height: var(--div-box-height); 
+}
+
+.box_1{
+    background-color: red;   
+    margin-left : calc(var(--div-box-width) * 0);
+}
+
+.box_2{
+    background-color: rgb(72, 50, 50); 
+    margin-left : calc(var(--div-box-width) * 1);
+}
+
+.box_3{
+    background-color: rgb(128, 255, 0); 
+    margin-left :calc(var(--div-box-width) * 2);
+}
+
+.box_4{
+    background-color: rgb(149, 0, 255); 
+    margin-left : calc(var(--div-box-width) * 3);
+}
