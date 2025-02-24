@@ -11,6 +11,7 @@ body{
 div{
     width: var(--div-box-width);
     height: var(--div-box-height); 
+    border: 1px solid black;
 }
 
 .box_1{

@@ -1,0 +1,28 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    width: 500px;
+    padding: 20px;
+    border: 20px solid black;
+}
+
+.cb{
+    /* 
+        content-box :
+        내가 설정한 너비 => 컨텐츠의 너비
+        컨텐츠의 영역만을 크기로 생성
+        */
+    box-sizing: content-box;
+}
+
+.bb{
+    /* 
+        border-box :
+        내가 설정한 너비 => 컨텐츠의 너비 + padding + border
+        컨텐츠의 영역 + padding + border를 크기로 생성
+        */
+    box-sizing: border-box;
+}

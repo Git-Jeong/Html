@@ -1,0 +1,50 @@
+body{
+    padding: 0;
+    margin: 0; 
+}
+
+:root{ 
+    --div-box-width: 100px;
+    --div-box-height: 100px; 
+    --div-box-border: 5px; 
+}
+
+div{
+    width: var(--div-box-width);
+    height: var(--div-box-height);  
+    /* border : var(--div-box-border) solid rgb(153, 129, 129); */ 
+    border-width: var(--div-box-border); 
+    text-align: right;
+}
+
+.box_1{
+    background-color: red;    
+    padding-left: calc(var(--div-box-width) * 0);
+    border-style: dashed;
+    border-bottom-left-radius: 50px;
+}
+
+.box_2{
+    background-color: rgb(72, 50, 50);  
+    padding-left: calc(var(--div-box-width) * 1);
+    border-style: solid;
+    border-radius: 50px;
+}
+
+.box_3{
+    background-color: rgb(128, 255, 0);  
+    padding-left: calc(var(--div-box-width) * 2);
+    border-style: ridge;
+}
+
+.box_4{
+    background-color: rgb(149, 0, 255);  
+    padding-left: calc(var(--div-box-width) * 3);
+    border-style: groove;
+}
+
+.box_5{
+    background-color: rgb(144, 141, 147);  
+    padding-left: calc(var(--div-box-width) * 4);
+    border-style: none;
+}
